@@ -16,8 +16,6 @@ RUN cd /rer_venv &&\
 pip install uvicorn &&\
 pip install fastapi &&\
 pip install transformers &&\
-pip install torch
-RUN cd /rer_venv &&\
-. bin/activate &&\
+pip install torch &&\
 pip install bitsandbytes
 EXPOSE 8000
