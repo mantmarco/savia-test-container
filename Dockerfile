@@ -5,7 +5,7 @@ apt-get -y install git python3 python3-pip python3-venv &&\
 mkdir /rer_venv &&\
 cd /rer_venv &&\
 python3 -m venv /rer_venv &&\
-source bin/activate &&\
+. bin/activate &&\
 mkdir /rer_app &&\
 cd /rer_app/ &&\
 git init &&\
