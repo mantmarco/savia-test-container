@@ -11,6 +11,11 @@ spec:
       volumeMounts:
         - name: savia-harbor-secret
           mountPath: /kaniko/.docker
+      resources:
+        limits:
+          memory: 40Gi
+        requests:
+          memory: 8Gi
   restartPolicy: Never
   volumes:
     - name: savia-harbor-secret
