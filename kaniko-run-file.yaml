@@ -14,8 +14,10 @@ spec:
       resources:
         limits:
           memory: 40Gi
+          cpu: 16000m
         requests:
           memory: 8Gi
+          cpu: 4000m
   restartPolicy: Never
   volumes:
     - name: savia-harbor-secret
