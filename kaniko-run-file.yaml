@@ -7,7 +7,7 @@ spec:
   containers:
     - name: savia-kaniko
       image: gcr.io/kaniko-project/executor:debug
-      args: ["--verbosity=debug", "--skip-tls-verify", "--single-snapshot", "--context=git://github.com/mantmarco/savia-test-container", "--destination=core-harbor.stg.margherita.ad.lepida.it/savia-test/savia-test-repo"]
+      args: ["--skip-tls-verify", "--single-snapshot", "--context=git://github.com/mantmarco/savia-test-container", "--destination=core-harbor.stg.margherita.ad.lepida.it/savia-test/savia-test-repo"]
       volumeMounts:
         - name: savia-harbor-secret
           mountPath: /kaniko/.docker
