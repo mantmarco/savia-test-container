@@ -7,15 +7,15 @@ spec:
   containers:
     - name: savia-kaniko
       image: gcr.io/kaniko-project/executor:debug
-      args: ["--context=git://github.com/mantmarco/savia-test-container", "--destination=core-harbor.stg.margherita.ad.lepida.it/savia-test/savia-test-repo"]
+      args: ["--verbosity=debug", "--skip-tls-verify", "--context=git://github.com/mantmarco/savia-test-container", "--destination=core-harbor.stg.margherita.ad.lepida.it/savia-test/savia-test-repo"]
       volumeMounts:
         - name: savia-harbor-secret
           mountPath: /kaniko/.docker
-    restartPolicy: Never
-    volumes:
-      - name: savia-harbor-secret
-        secret:
-          secretName: savia-harbor-secret-config-json
+  restartPolicy: Never
+  volumes:
+    - name: savia-harbor-secret
+      secret:
+        secretName: savia-harbor-secret-config-json
   metadata:
     namespace: rer-sanita-laemur
   runtimeClassName: nvidia
